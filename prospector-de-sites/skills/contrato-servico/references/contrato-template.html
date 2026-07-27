@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- TEMPLATE DE CONTRATO — substituir todos os {{PLACEHOLDERS}}. Imprimir: Ctrl+P > Salvar como PDF (A4) -->
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Contrato de Prestação de Serviços — {{NOME_NEGOCIO}}</title>
+<style>
+@page{size:A4;margin:2.2cm}
+body{font-family:Georgia,'Times New Roman',serif;color:#1a1a1a;line-height:1.65;font-size:12.5pt;margin:0;background:#E9E7E1;padding:46px 16px}
+.folha{background:#fff;max-width:21cm;margin:0 auto;padding:2.2cm;box-shadow:0 12px 44px rgba(0,0,0,.18);border-radius:4px}
+.print-bar{position:fixed;top:14px;right:16px;display:flex;gap:8px;font-family:Arial,sans-serif;z-index:10}
+.print-bar button{border:0;border-radius:9px;padding:10px 18px;font-size:13px;font-weight:700;cursor:pointer;background:#D97757;color:#fff;box-shadow:0 4px 14px rgba(0,0,0,.2)}
+.print-bar button:hover{background:#C15F3C}
+h1{font-size:15pt;text-align:center;text-transform:uppercase;letter-spacing:.05em;margin:0 0 28px}
+h2{font-size:12.5pt;margin:22px 0 8px}
+p{margin:8px 0;text-align:justify}
+.partes p{margin:6px 0}
+.assinaturas{margin-top:56px;display:flex;gap:40px;justify-content:space-between;page-break-inside:avoid}
+.assinaturas div{flex:1;text-align:center}
+.linha{border-top:1px solid #1a1a1a;margin-bottom:6px;padding-top:6px}
+.aviso{margin-top:36px;font-size:9pt;color:#666;border-top:1px solid #ccc;padding-top:10px;font-family:Arial,sans-serif}
+.local-data{margin-top:40px}
+@media print{.aviso{position:fixed;bottom:0}body{background:#fff;padding:0}.folha{box-shadow:none;border-radius:0;max-width:none;padding:0}.print-bar{display:none}}
+</style>
+</head>
+<body>
+<div class="print-bar"><button onclick="window.print()">🖨 Imprimir / Salvar PDF</button></div>
+<div class="folha">
+<h1>Contrato de Prestação de Serviços<br>Criação e Publicação de Página na Internet</h1>
+
+<div class="partes">
+<p><b>CONTRATANTE:</b> {{NOME_CLIENTE}}, {{CPF_CNPJ_CLIENTE_LABEL}} nº {{CPF_CNPJ_CLIENTE}}, com endereço em {{ENDERECO_CLIENTE}}, {{CIDADE_UF_CLIENTE}}.</p>
+<p><b>CONTRATADO(A):</b> {{NOME_PRESTADOR}}, {{CPF_CNPJ_PRESTADOR_LABEL}} nº {{CPF_CNPJ_PRESTADOR}}, com endereço em {{ENDERECO_PRESTADOR}}, {{CIDADE_UF_PRESTADOR}}.</p>
+</div>
+
+<p>As partes acima identificadas celebram o presente contrato de prestação de serviços, que se regerá pelas cláusulas seguintes.</p>
+
+<h2>Cláusula 1ª — Do objeto</h2>
+<p>O presente contrato tem por objeto a criação de nova versão da página na internet do CONTRATANTE ({{URL_SITE_ANTIGO}}), incluindo: redesign completo do layout com manutenção da identidade visual (logotipo, cores e imagens fornecidas), redação aprimorada do conteúdo existente, adaptação para dispositivos móveis e publicação da página no endereço {{URL_PUBLICADA}}.</p>
+
+<h2>Cláusula 2ª — Do valor e forma de pagamento</h2>
+<p>Pelos serviços descritos na Cláusula 1ª, o CONTRATANTE pagará ao CONTRATADO(A) o valor total de <b>R$ {{VALOR}} ({{VALOR_EXTENSO}})</b>, na seguinte forma: {{FORMA_PAGAMENTO}}.</p>
+
+<h2>Cláusula 3ª — Do prazo de entrega</h2>
+<p>A página em sua versão final será entregue e publicada em até {{PRAZO_ENTREGA}} a contar da assinatura deste contrato e do fornecimento, pelo CONTRATANTE, dos materiais e aprovações necessários. Está incluída {{RODADAS_AJUSTES}} rodada(s) de ajustes de texto e imagens após a entrega.</p>
+
+{{CLAUSULA_MANUTENCAO}}
+
+<h2>Cláusula {{N_CONTEUDO}}ª — Do conteúdo e responsabilidades</h2>
+<p>O CONTRATANTE declara ser titular ou possuir autorização de uso de todos os textos, imagens, logotipo e informações fornecidos, responsabilizando-se pela veracidade das informações profissionais divulgadas. O CONTRATADO(A) compromete-se a não inserir na página informações não fornecidas ou não aprovadas pelo CONTRATANTE.</p>
+
+<h2>Cláusula {{N_HOSPEDAGEM}}ª — Da hospedagem e domínio</h2>
+<p>{{TEXTO_HOSPEDAGEM}}</p>
+
+<h2>Cláusula {{N_RESCISAO}}ª — Da rescisão</h2>
+<p>Este contrato poderá ser rescindido por qualquer das partes mediante comunicação por escrito. Em caso de rescisão pelo CONTRATANTE após o início dos trabalhos, será devido o valor proporcional aos serviços já executados. Serviços de manutenção mensal, quando contratados, podem ser cancelados por qualquer parte com aviso prévio de 30 (trinta) dias.</p>
+
+<h2>Cláusula {{N_FORO}}ª — Do foro</h2>
+<p>Fica eleito o foro da comarca de {{CIDADE_FORO}} para dirimir quaisquer controvérsias oriundas deste contrato.</p>
+
+<p class="local-data">{{CIDADE_ASSINATURA}}, {{DATA_EXTENSO}}.</p>
+
+<div class="assinaturas">
+  <div><div class="linha"></div><b>{{NOME_CLIENTE}}</b><br>Contratante</div>
+  <div><div class="linha"></div><b>{{NOME_PRESTADOR}}</b><br>Contratado(a)</div>
+</div>
+
+<p class="aviso">Este documento é uma minuta base gerada automaticamente para facilitar a formalização entre as partes. Recomenda-se a revisão por profissional jurídico antes da assinatura. Gerado pelo plugin Prospector de Sites.</p>
+</div>
+</body>
+</html>
+<!--
+PLACEHOLDERS OBRIGATÓRIOS: NOME_CLIENTE, CPF_CNPJ_CLIENTE(+LABEL: "inscrito(a) no CPF" ou "inscrita no CNPJ"), ENDERECO_CLIENTE, CIDADE_UF_CLIENTE,
+NOME_PRESTADOR, CPF_CNPJ_PRESTADOR(+LABEL), ENDERECO_PRESTADOR, CIDADE_UF_PRESTADOR, URL_SITE_ANTIGO, URL_PUBLICADA,
+VALOR, VALOR_EXTENSO, FORMA_PAGAMENTO, PRAZO_ENTREGA (ex.: "7 (sete) dias úteis"), RODADAS_AJUSTES (padrão: "1 (uma)"),
+CIDADE_FORO, CIDADE_ASSINATURA, DATA_EXTENSO.
+CLAUSULA_MANUTENCAO — SE contratada, inserir:
+  <h2>Cláusula 4ª — Da manutenção mensal</h2><p>O CONTRATANTE contrata ainda o serviço de manutenção mensal da página (hospedagem, pequenas atualizações de texto/imagens e suporte), pelo valor de R$ {{VALOR_MANUTENCAO}} mensais, com vigência a partir da publicação e renovação automática mensal.</p>
+  e numerar as cláusulas seguintes como 5ª/6ª/7ª/8ª (N_CONTEUDO=5, N_HOSPEDAGEM=6, N_RESCISAO=7, N_FORO=8).
+  SE NÃO contratada: remover o bloco e usar N_CONTEUDO=4, N_HOSPEDAGEM=5, N_RESCISAO=6, N_FORO=7.
+TEXTO_HOSPEDAGEM: com manutenção → "A página permanecerá hospedada em infraestrutura administrada pelo CONTRATADO(A) enquanto vigorar o serviço de manutenção mensal.";
+  sem manutenção → "A página será entregue publicada; a partir da entrega, a contratação e renovação de hospedagem e domínio próprios são de responsabilidade do CONTRATANTE, com suporte do CONTRATADO(A) na migração, se solicitado."
+-->
