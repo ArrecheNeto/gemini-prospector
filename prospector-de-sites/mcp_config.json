@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "prospector-crm": {
+      "command": "python",
+      "args": [
+        "C:/Users/SEU_USUARIO/.gemini/config/plugins/prospector-de-sites/prospector-mcp.py",
+        "--pasta",
+        "C:/CAMINHO/DA/PASTA/DO/PROJETO"
+      ]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"]
+    }
+  }
+}
